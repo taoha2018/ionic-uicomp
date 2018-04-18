@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {ActionSheetController, IonicPage, ModalController, NavController, NavParams, Platform} from 'ionic-angular';
+import {
+  ActionSheetController, AlertController, IonicPage, ModalController, NavController, NavParams,
+  Platform
+} from 'ionic-angular';
 import {ModalPage} from "../modal/modal";
 
 /**
@@ -17,9 +20,10 @@ import {ModalPage} from "../modal/modal";
 export class ComponentPage {
 
   constructor(public navCtrl: NavController,
-              public actionsheetCtrl: ActionSheetController,
-              public modalCtrl: ModalController,
-              public platform: Platform,
+              public actionsheetCtrl : ActionSheetController,
+              public modalCtrl:ModalController,
+              public alertCtrl:AlertController,
+              public platform:Platform,
               public navParams: NavParams) {
   }
 
@@ -81,7 +85,13 @@ export class ComponentPage {
   }
 
   slide() {
-    this.navCtrl.push('SlidePage');
+    this.navCtrl.push("SlidePage");
+  }
+
+  promptAlert() {
+    let prompt = this.alertCtrl.create();
+    prompt.present();
 
   }
+
 }

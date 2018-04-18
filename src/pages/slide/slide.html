@@ -13,12 +13,20 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-slides pager autoplay="5000" loop="true" speed="2000">
-    <ion-slide *ngfor="let image of images">
-      <img [src]="image.title"></img>
-    </ion-slide>
+<!--<ion-content padding>-->
+  <!--<ion-slides pager autoplay="5000" loop="true" speed="2000">-->
+    <!--<ion-slide *ngFor="let myimage of images">-->
+      <!--<img [src]="myimage.title" />-->
+    <!--</ion-slide>-->
+  <!--</ion-slides>-->
+<!--</ion-content>-->
 
-  </ion-slides>
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="let cardImg of cardImages">
+    <img [src]="cardImg.src"/>
+    <div class="card-title">{{cardImg.title}}</div>
+    <div class="card-subtitle">{{cardImg.subtitle}}</div>
+  </ion-card>
 
 </ion-content>

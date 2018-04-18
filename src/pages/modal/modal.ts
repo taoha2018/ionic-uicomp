@@ -15,14 +15,15 @@ import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular
 })
 export class ModalPage {
   private profile = {
-    actionSwitch : false,
-    name: "",
+    actionSwitch:false,
+    name:"",
     gender:"",
     domestic:"",
-    startdata:""
+    startDate:""
   }
+
   constructor(public navCtrl: NavController,
-              public viewCtrl: ViewController,
+              public viewCtrl:ViewController,
               public navParams: NavParams) {
   }
 
@@ -30,8 +31,12 @@ export class ModalPage {
     console.log('ionViewDidLoad ModalPage');
   }
 
-  close() {
+  close(){
     this.viewCtrl.dismiss();
+  }
+
+  save() {
+    this.viewCtrl.dismiss(this.profile);
   }
 
 }
